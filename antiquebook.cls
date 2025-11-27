@@ -224,6 +224,10 @@
 \AtBeginEnvironment{theorem}{\addtocounter{theorem}{1}%
 	\extramarks{\thetheorem}{}\addtocounter{theorem}{-1}}
 
+\newcommand{\shorttitle}{}          
+\newcommand{\setshorttitle}[1]{%
+  \renewcommand{\shorttitle}{#1}%
+}
 \pagestyle{fancy}
 \fancypagestyle{fancy}{
 	\fancyhf{}
@@ -236,8 +240,7 @@
 	\fancyhead[LE]{\small\thepage}
     \fancyhead[RO]{\small\thepage}
     \fancyfoot[C]{}
-	\fancyhead[CO]{\small\itshape
-    \thesection.\hspace{.25em}\nouppercase\rightmark}
+    \fancyhead[CO]{\small\itshape \shorttitle}
 }
 
 \setcounter{secnumdepth}{3}

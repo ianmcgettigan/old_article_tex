@@ -1,6 +1,6 @@
 # Old article LaTeX code
 
-**This is almost entirely taken from [excellent
+**This is almost entirely taken from this [excellent
 repository](https://github.com/proafxin/antique_book)**. I just made a few
 style changes to make it more in line with articles of the time. All the
 heavy lifting, such as the excellent font design, is done by the linked
