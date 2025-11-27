@@ -3,7 +3,7 @@
 \LoadClass[12pt]{book}
 
 \usepackage{amsmath,amssymb,amsthm,etoolbox}
-\usepackage[left=.5in,right=.5in,top=.5in,]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{xcolor,color,fancyhdr,}
 
 \usepackage{titletoc,tocloft,fmtcount}
@@ -11,8 +11,19 @@
 \renewcommand{\theequation}{$\ddagger$\arabic{equation}}
 %\renewcommand{\chaptername}{CHAPTER}
 \renewcommand{\contentsname}{\parbox{\linewidth}{\centerline{\normalfont\LARGE CONTENTS}~\\[-1.5cm]}}
+\renewcommand{\headrulewidth}{0pt}
 
-\renewcommand{\thesection}{$\S$\arabic{section}\hspace{.1em}.\hspace{.2em}}
+\renewcommand{\thesection}{\Roman{section}}
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\centering\scshape\small}     
+  {\thesection.}                
+  {0.25em}{}                   
+\titlespacing*{\section}{0pt}{1em plus .2ex}{1em plus .2ex}
+
+\renewcommand{\thesubsection}{\thesection\Alph{subsection}.}
+\titleformat{\subsection}{\itshape}{\thesubsection}{0.25em}{}
 %\addtolength{\cftchapnumwidth}{70pt}
 %\addtolength{\cftsecnumwidth}{30pt}
 \makeatletter
@@ -36,8 +47,8 @@
 	\fi}
 \makeatother
 
-\usepackage{hyperref,titlesec,xifthen,iftex,authoraftertitle,}
-
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec,xifthen,iftex,authoraftertitle,}
 \ifPDFTeX
 	\usepackage{pdfrender, xcolor,relsize}
 	\usepackage[T1]{fontenc}
@@ -178,8 +189,6 @@
 \makeglossaries
 
 \titleformat{\chapter}[display]{\Huge}{\normalfont\large\centering\MakeUppercase\chaptername\hspace{.5em}\thechapter.}{1ex}{\centering\vspace{1ex}\ifthenelse{\value{chapter}>0}{\MakeUppercase}{}}[\vspace{1ex}]
-\titleformat{\section}[display]{\LARGE}{}{1ex}{\centering\ifthenelse{\value{section}>0}{\thesection\;}{}\vspace{.2in}}[]
-%\titleformat{\subsection}[display]{\bfseries\scshape\Large}{}{1ex}{\centering\ifthenelse{\value{section}>0}{$\S\S$\thesubsection\;}{}}[\titlerule]
 
 \newtheorem{theorem}{\textbf{\textbf{Theorem}}}
 %\numberwithin{theorem}{chapter}
@@ -224,8 +233,11 @@
 			{\textit{Theorem} \firstleftxmark}% Only one theorem on the page
 			{\textit{Theorems} \firstleftxmark–\lastleftxmark}}}
 	\fancyhead[CE]{\small\itshape \MyAuthor}
-	\fancyhead[R]{\thepage}
-	\fancyhead[CO]{\small\itshape \thesection\hspace{.1em}\nouppercase\rightmark}
+	\fancyhead[LE]{\small\thepage}
+    \fancyhead[RO]{\small\thepage}
+    \fancyfoot[C]{}
+	\fancyhead[CO]{\small\itshape
+    \thesection.\hspace{.25em}\nouppercase\rightmark}
 }
 
 \setcounter{secnumdepth}{3}

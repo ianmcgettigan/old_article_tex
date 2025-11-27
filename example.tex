@@ -1,26 +1,33 @@
+%! TeX program = xelatex
 \documentclass{antiquebook}
 
 
 \usepackage{lipsum}
 \usepackage[math]{blindtext}
 
-\author{Masum Billal \and Author Two}
-\title{{Testing Antique Book}}
+\author{IAN MCGETTIGAN}
+\title{{TITLE OF ARTICLE}}
 
 %\input{glossary.tex}
 
 \begin{document}
-	\frontmatter
-	\maketitle
-	\tableofcontents
-	\mainmatter
-	\pagestyle{fancy}
-	\chapter{First}
-	\section{Dummy}
-	\blindmathtrue
-	\blindmathpaper
-	\section{Second}
-	\blindmathpaper
+\frontmatter
+\maketitle
+\tableofcontents
+\mainmatter
+\pagestyle{fancy}
+
+\chapter{First Chapter}
+\thispagestyle{empty}
+
+\section{SECTION HEADER}
+
+\blindmathtrue
+\blindmathpaper
+
+\section{ANOTHER SECTION}
+\subsection{Subsection}
+\blindmathpaper
 	\textbf{Some bold text.}
 		\begin{align*}
 			\parenthesis{\squarebracket{\floor{\dfrac{x}{n}}}}
