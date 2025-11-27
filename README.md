@@ -15,10 +15,10 @@ repository.
   economic journals such as *The Quarterly Journal of Economics* and *The
   Economic Journal*
 - Odd/even page number split
-- Removed neon coloring around hyperlinks in `.pdf` output by setting 
+- Removed neon coloring around hyperlinks in `.pdf` output by setting  
+`[hidelinks]` argument in `hyperref` package.
 - Added user-configurable SHORT TITLE that can be defined in the main
   `.tex` file. Previously this was defined as the section header. 
-`[hidelinks]` argument in `hyperref` package.
 - May have made a few other changes. Exact changes can be seen by comparing
   `antiquebook.cls`. 
     - If you wish to make any further adjustments, this is the file to
