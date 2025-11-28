@@ -224,9 +224,18 @@
 \AtBeginEnvironment{theorem}{\addtocounter{theorem}{1}%
 	\extramarks{\thetheorem}{}\addtocounter{theorem}{-1}}
 
+% custom fancyhdr user-configurable definitions
 \newcommand{\shorttitle}{}          
 \newcommand{\setshorttitle}[1]{%
   \renewcommand{\shorttitle}{#1}%
+}
+\newcommand{\rightheader}{}
+\newcommand{\setrightheader}[1]{%
+  \renewcommand{\rightheader}{#1}%
+}
+\newcommand{\leftheader}{}
+\newcommand{\setleftheader}[1]{%
+  \renewcommand{\leftheader}{#1}%
 }
 \pagestyle{fancy}
 \fancypagestyle{fancy}{
@@ -241,6 +250,8 @@
     \fancyhead[RO]{\small\thepage}
     \fancyfoot[C]{}
     \fancyhead[CO]{\small\itshape \shorttitle}
+    \fancyhead[RE]{\small \rightheader}
+    \fancyhead[LO]{\small \leftheader}
 }
 
 \setcounter{secnumdepth}{3}
