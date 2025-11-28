@@ -237,6 +237,10 @@
 \newcommand{\setleftheader}[1]{%
   \renewcommand{\leftheader}{#1}%
 }
+\newcommand{\journal}{\MyAuthor} % if no journal given, use Author name
+\newcommand{\setjournal}[1]{%
+  \renewcommand{\journal}{#1}%
+}
 \pagestyle{fancy}
 \fancypagestyle{fancy}{
 	\fancyhf{}
@@ -245,7 +249,7 @@
 		{\ifthenelse{\equal{\firstleftxmark}{\lastleftxmark}}
 			{\textit{Theorem} \firstleftxmark}% Only one theorem on the page
 			{\textit{Theorems} \firstleftxmark–\lastleftxmark}}}
-	\fancyhead[CE]{\small\itshape \MyAuthor}
+	\fancyhead[CE]{\small\itshape \journal}
 	\fancyhead[LE]{\small\thepage}
     \fancyhead[RO]{\small\thepage}
     \fancyfoot[C]{}
