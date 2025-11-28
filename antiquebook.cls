@@ -8,7 +8,6 @@
 
 \usepackage{titletoc,tocloft,fmtcount}
 \renewcommand{\thechapter}{\Roman{chapter}}
-\renewcommand{\theequation}{$\ddagger$\arabic{equation}}
 %\renewcommand{\chaptername}{CHAPTER}
 \renewcommand{\contentsname}{\parbox{\linewidth}{\centerline{\normalfont\LARGE CONTENTS}~\\[-1.5cm]}}
 \renewcommand{\headrulewidth}{0pt}
